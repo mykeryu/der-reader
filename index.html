@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Der Reader Help & Privacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=IBM+Plex+Sans:wght@400;500;600&family=Outfit:wght@800&display=swap">
+<style>
+/* Layout: one readable column, like an article in the app itself; a slim index of sections at the top. */
+:root {
+  --bg: #f4f5f7; --surface: #ffffff; --fg: #17181c; --muted: #5b6270; --line: #e1e3e8; --accent: #0b7f58; --accent-ink: #ffffff; --chip: #e4f5ee; --brand: #0e9f6e;
+  --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --body: "IBM Plex Sans", -apple-system, "Segoe UI", system-ui, sans-serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #101114; --surface: #1a1c21; --fg: #eef0f4; --muted: #9a9fab; --line: #2c2f37; --accent: #3ddc97; --accent-ink: #0b1f16; --chip: #1c2a25; --brand: #3ddc97; } }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--fg); font: 16px/1.65 var(--body); margin: 0; padding: 0 16px; }
+main { max-width: 700px; margin: 0 auto; padding-block: 40px 72px; display: grid; gap: 44px; }
+header.top { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; }
+header.top img { width: 76px; height: 76px; border-radius: 18px; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1.wordmark { font-family: "Outfit", var(--body); font-weight: 800; font-size: clamp(36px, 8vw, 52px); line-height: 1.05; letter-spacing: -0.03em; }
+.wordmark .dot { display: inline-block; width: .16em; height: .16em; margin-left: .06em; border-radius: 50%; background: var(--brand); }
+.tagline { color: var(--muted); margin: 6px 0 0; }
+nav.index { display: flex; flex-wrap: wrap; gap: 8px; }
+nav.index a { text-decoration: none; color: var(--fg); background: var(--chip); padding: 6px 12px; border-radius: 999px; font-size: 14px; font-weight: 500; }
+nav.index a:hover, nav.index a:focus-visible { background: var(--accent); color: var(--accent-ink); outline: none; }
+section { display: grid; gap: 14px; scroll-margin-top: 16px; }
+h2 { font-size: 28px; font-weight: 650; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+h3 { font-size: 20px; font-weight: 500; margin-top: 8px; }
+p, ul, ol { margin: 0; max-width: 65ch; }
+ul, ol { padding-left: 1.25em; display: grid; gap: 6px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; display: grid; gap: 8px; }
+dl { margin: 0; display: grid; gap: 14px; }
+dt { font-weight: 600; }
+dd { margin: 4px 0 0; color: var(--fg); }
+.key { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .9em; background: var(--chip); padding: 1px 6px; border-radius: 5px; white-space: nowrap; }
+.meta { color: var(--muted); font-size: 14px; }
+footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 16px; }
+@media (max-width: 420px) { header.top img { width: 60px; height: 60px; border-radius: 14px; } h2 { font-size: 24px; } }
+</style>
+</head>
+<body>
+<main>
+  <header class="top">
+    <img src="data:image/png;base64,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" alt="Der Reader app icon">
+    <div>
+      <h1 class="wordmark">Der Reader<span class="dot" aria-hidden="true"></span></h1>
+      <p class="tagline">A dark-first news reader for your RSS feeds that keeps your place across iPhone, iPad, Mac and Windows.</p>
+    </div>
+  </header>
+
+  <nav class="index" aria-label="On this page">
+    <a href="#support">Support</a>
+    <a href="#continue">Pick up where you left off</a>
+    <a href="#sync">Syncing your devices</a>
+    <a href="#troubleshooting">Troubleshooting</a>
+    <a href="#contact">Contact</a>
+    <a href="#privacy">Privacy Policy</a>
+  </nav>
+
+  <section id="support">
+    <span class="eyebrow">Support</span>
+    <h2>Getting started</h2>
+    <p>Der Reader doesn’t need an account. Add the sites you follow and it fetches their articles directly.</p>
+    <ol>
+      <li><strong>Import your subscriptions.</strong> Choose <span class="key">⋯</span> → <span class="key">Import OPML…</span> and pick an OPML file. Every feed reader can export one (in Feedly: Organize → Import/Export). Folders come across as they are.</li>
+      <li><strong>Or add a feed.</strong> Choose <span class="key">⋯</span> → <span class="key">Add Feed…</span> and type a website such as theverge.com. Der Reader finds the site’s feed for you.</li>
+      <li><strong>Read.</strong> Opening an article marks it read. Swipe an article to mark it read or unread, or to star it. Long-press (iPhone, iPad) or right-click (Mac, Windows) a feed or folder for <em>Mark All as Read</em>.</li>
+    </ol>
+    <h3>Appearance</h3>
+    <p>Der Reader is dark by default. To switch to light, or to follow your device’s setting, open Sync &amp; Settings → Appearance on iPhone and iPad, or <span class="key">⋯</span> → <span class="key">Appearance</span> on Mac and Windows. Every feed has its own color, shown on its articles and its unread count, and it is the same color on all your devices.</p>
+    <h3>Refresh schedule</h3>
+    <p>Feeds are checked every 5 minutes while the app is open. Change this in Sync &amp; Settings → Refresh Feeds (every 5 minutes, every 15 minutes, every hour, or manually). On iPhone and iPad, iOS also refreshes in the background when it allows, usually less often.</p>
+    <h3>Sort order</h3>
+    <p>Articles are listed oldest first, so you read in the order things happened. The arrow button next to Mark All as Read switches to newest first and back. Your choice is remembered on each device.</p>
+    <h3>Column sizes</h3>
+    <p>Whenever the columns are side by side (iPad, iPhone Duo when open, iPhone turned sideways, Mac and Windows), drag the divider between two columns to resize them, or double-tap/double-click it to reset. On iPhone and iPad you can also set the sizes in Sync &amp; Settings → Layout, and hide the feeds column for more room to read.</p>
+  </section>
+
+  <section id="continue">
+    <span class="eyebrow">Support</span>
+    <h2>Pick up where you left off</h2>
+    <p>Der Reader remembers how far down each article you have read. Open an article again and it returns to where you stopped.</p>
+    <p>With sync on, your place follows you to your other devices. Stop part-way through an article on one device and a <strong>Continue</strong> bar appears on the others, naming the article, the device it came from and how far you got. Tap or click the bar to open the article at the same spot, or use the ✕ to put it away.</p>
+    <ul>
+      <li>The bar usually appears within about a minute. iCloud Drive carries the change between devices, so it can take a little longer.</li>
+      <li>Your place is saved as a percentage of the article, so on a different screen size it lands near the same paragraph, not on the exact line.</li>
+      <li>Places are kept for two weeks. Short articles that don’t scroll have nothing to resume.</li>
+    </ul>
+  </section>
+
+  <section id="sync">
+    <span class="eyebrow">Support</span>
+    <h2>Syncing your devices</h2>
+    <p>Der Reader keeps your subscriptions, read status, starred articles, reading positions and settings in step across your devices through your own iCloud Drive. There’s no Der Reader server.</p>
+    <ol>
+      <li><strong>iPhone and iPad:</strong> open Sync &amp; Settings and check that Sync shows iCloud. If it is off, tap Turn On iCloud Sync. You need to be signed in to iCloud with iCloud Drive on. Der Reader keeps its files in a <strong>…der</strong> folder in iCloud Drive.</li>
+      <li><strong>Mac and Windows:</strong> choose <span class="key">⋯</span> → <span class="key">Sync with iCloud (iPhone &amp; iPad)</span>, or <span class="key">Turn On Sync…</span> and pick the <strong>…der</strong> folder in iCloud Drive. On Windows, iCloud Drive is available through the iCloud for Windows app.</li>
+    </ol>
+    <p class="meta">The folder is called “…der” because that was the app’s earlier name. It keeps that name so devices that are already syncing stay in step.</p>
+    <p class="meta">Each device writes only its own file in that folder, so cloud drives never create conflicting copies. When the same article was changed on two devices, the most recent change wins.</p>
+  </section>
+
+  <section id="troubleshooting">
+    <span class="eyebrow">Support</span>
+    <h2>Troubleshooting</h2>
+    <dl>
+      <div class="panel">
+        <dt>A feed shows a “!” next to its name</dt>
+        <dd>Der Reader couldn’t update that feed. Sites sometimes move their feeds. Unsubscribe from it, then add it again using the site’s address, and Der Reader will find the current feed.</dd>
+      </div>
+      <div class="panel">
+        <dt>The unread number doesn’t appear on the app icon (iPhone and iPad)</dt>
+        <dd>iOS shows icon numbers only for apps allowed to use badges. Open the Settings app → Notifications → Der Reader and turn on Badges. Der Reader never sends notification alerts or sounds.</dd>
+      </div>
+      <div class="panel">
+        <dt>Changes from another device don’t show up</dt>
+        <dd>Make sure each device is signed in to the same iCloud account with iCloud Drive on, that your Mac and PC are syncing with the …der folder, and that iCloud Drive has finished syncing on each one. Pull down to refresh (iPhone, iPad) or press R (Mac, Windows) to check right away.</dd>
+      </div>
+      <div class="panel">
+        <dt>The Continue bar doesn’t appear</dt>
+        <dd>It shows only for an article left part-way through on a different device, and only if that article is also in this device’s feeds. Check that sync is on for both devices, give iCloud a minute, then refresh. Once you open or dismiss the bar, it doesn’t offer the same article again.</dd>
+      </div>
+      <div class="panel">
+        <dt>Some articles show only a summary</dt>
+        <dd>Many sites publish only a summary in their feed. Tap the headline, or the Safari button, to read the full article on the site.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section id="contact">
+    <span class="eyebrow">Support</span>
+    <h2>Contact</h2>
+    <p>Questions, problems or ideas? Email <a href="mailto:ekimkram@gmail.com">ekimkram@gmail.com</a>. Please include which device you’re using and, for a feed that won’t update, its web address.</p>
+  </section>
+
+  <section id="privacy">
+    <span class="eyebrow">Privacy Policy</span>
+    <h2>Privacy Policy</h2>
+    <p class="meta">Effective November 15, 2026</p>
+    <p><strong>Der Reader does not collect any personal information.</strong> There is no account, no analytics, no advertising and no tracking. The developer can’t see what you read or subscribe to.</p>
+    <h3>What stays on your devices</h3>
+    <p>Your subscriptions, the articles Der Reader has downloaded, your read and starred status, how far you have read in each article, and your settings are stored on your device. When sync is on, they are also saved in Der Reader’s folder in iCloud Drive (or another folder you choose), in your own iCloud account, where only you and Apple’s iCloud service can access them under <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s privacy policy</a>. Reading positions are kept for two weeks.</p>
+    <h3>Connections to websites</h3>
+    <p>To fetch articles, Der Reader connects directly to the websites whose feeds you subscribe to, and loads the images in their articles and their site icons. Like any web request, those sites can see your device’s IP address and the request itself, and their own privacy policies apply. Der Reader doesn’t send them anything about you beyond what a web request includes. Links you open go to your web browser.</p>
+    <h3>Permissions</h3>
+    <ul>
+      <li><strong>Notifications (iPhone, iPad):</strong> used only to show the unread count on the app icon. Der Reader doesn’t send notification alerts.</li>
+      <li><strong>Background App Refresh (iPhone, iPad):</strong> lets iOS check your feeds while the app is closed.</li>
+      <li><strong>Files and folders:</strong> Der Reader only opens the OPML file or sync folder you choose.</li>
+    </ul>
+    <h3>Children</h3>
+    <p>Der Reader isn’t directed at children and doesn’t knowingly collect information from anyone, including children.</p>
+    <h3>Changes</h3>
+    <p>If this policy changes, the new version will be posted on this page with a new effective date.</p>
+    <h3>Contact</h3>
+    <p>Questions about this policy: <a href="mailto:ekimkram@gmail.com">ekimkram@gmail.com</a>.</p>
+  </section>
+
+  <footer>Der Reader for iPhone, iPad, Mac and Windows.</footer>
+</main>
+</body>
+</html>
